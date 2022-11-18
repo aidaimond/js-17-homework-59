@@ -13,11 +13,11 @@ class NewMovieCl extends React.Component {
     films: []
   }
 
-  addMovie (newMovie: Movies) {
-    this.setState({ films: [...this.state.films, newMovie] });
+  addMovie(newMovie: Movies) {
+    this.setState({films: [...this.state.films, newMovie]});
   }
 
-  changeInput (value: string, id: string) {
+  changeInput(value: string, id: string) {
     const index = this.state.films.findIndex(film => film.id === id);
     const filmsCopy = [...this.state.films];
     const filmCopy = {...this.state.films[index]};
@@ -26,7 +26,7 @@ class NewMovieCl extends React.Component {
     this.setState({films: filmsCopy});
   }
 
-  removeBtn (id: string) {
+  removeBtn(id: string) {
     const index = this.state.films.findIndex(film => film.id === id);
     const filmsCopy = [...this.state.films];
     filmsCopy.splice(index, 1);
@@ -35,14 +35,14 @@ class NewMovieCl extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="col justify-content-center form-group m-4 border border-2 rounded-1">
         <div>
           <MovieForm
             createMovie={(movie) => this.addMovie(movie)}
           />
         </div>
         <div>
-          {this.state.films.map( film => (
+          {this.state.films.map(film => (
             <MovieCl
               key={film.id}
               film={film.movieName}

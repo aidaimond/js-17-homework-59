@@ -14,11 +14,11 @@ class MovieForm extends React.Component<Props> {
     title: ''
   }
 
-  onChangeFormInput (value: string) {
+  onChangeFormInput(value: string) {
     this.setState({title: value});
   }
 
-  addMovie (e: React.FormEvent<HTMLFormElement>) {
+  addMovie(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     this.props.createMovie({
       id: Math.random().toString(),
@@ -29,26 +29,28 @@ class MovieForm extends React.Component<Props> {
 
   render() {
     return (
-      <div className="w-50">
-        <form className="d-flex" onSubmit={(e) => this.addMovie(e)}>
-          <label htmlFor="createMovie">New Movie
-            <input
-              className="form-control col m-2"
-              name="movieName"
-              type="text"
-              placeholder="Enter movie"
-              value={this.state.title}
-              onChange={(e) => this.onChangeFormInput(e.target.value)}
-            />
+      <>
+        <form
+          className="m-3 d-flex"
+          onSubmit={(e) => this.addMovie(e)}>
+          <label className="m-2 mt-3" htmlFor="createMovie">New Movie
           </label>
+          <input
+            className="form-control m-2 w-50"
+            name="movieName"
+            type="text"
+            placeholder="Enter movie"
+            value={this.state.title}
+            onChange={(e) => this.onChangeFormInput(e.target.value)}
+          />
           <button
             disabled={!this.state.title}
-            className="btn btn-primary col-2 m-2"
+            className="btn btn-primary m-2 form-control w-25"
             type="submit"
           >Add
           </button>
         </form>
-      </div>
+      </>
     );
   }
 }

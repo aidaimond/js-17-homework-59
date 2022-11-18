@@ -9,12 +9,16 @@ interface Props {
 class MovieCl extends React.Component<Props> {
   render() {
     return (
-      <div>
+      <div className="m-3 d-flex border-top">
         <input
+          className="m-2 form-control col"
           value={this.props.film}
           onChange={this.props.onChange}
         />
-        <button onClick={this.props.onClick}>
+        <button
+          className="btn btn-secondary m-2 form-control w-25"
+          onClick={this.props.onClick}
+        >
           Delete
         </button>
       </div>

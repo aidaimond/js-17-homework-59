@@ -4,7 +4,7 @@ import Jokes from "./containers/container-task-2/Jokes/Jokes";
 
 function App() {
   return (
-    <div className="App">
+    <div className="d-flex">
       <NewMovieCl/>
       <Jokes/>
     </div>
