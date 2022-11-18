@@ -47,7 +47,8 @@ class MovieForm extends React.Component<Props> {
             disabled={!this.state.title}
             className="btn btn-primary m-2 form-control w-25"
             type="submit"
-          >Add
+          >
+            Add
           </button>
         </form>
       </>

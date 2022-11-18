@@ -7,6 +7,10 @@ interface Props {
 }
 
 class MovieCl extends React.Component<Props> {
+  shouldComponentUpdate(nextProps: Readonly<Props>): boolean {
+    return this.props.film !== nextProps.film;
+  }
+
   render() {
     return (
       <div className="m-3 d-flex border-top">

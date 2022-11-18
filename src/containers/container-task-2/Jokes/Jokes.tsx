@@ -11,11 +11,11 @@ const Jokes = () => {
     const fetchData = async () => {
       const response = await fetch(url);
       if (response.ok) {
-        const corns: Corns = await response.json();
-        setJokes(prev => ({
-          ...prev,
-          value: corns.value
-        }))
+        const corns = await response.json();
+        setJokes(
+          {
+            value: corns.value
+          });
       }
     }
     fetchData().catch();
