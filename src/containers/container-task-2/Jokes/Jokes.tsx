@@ -18,7 +18,7 @@ const Jokes = () => {
           });
       }
     }
-    fetchData().catch();
+    fetchData().catch(console.error);
   }
 
   useEffect(() => {
